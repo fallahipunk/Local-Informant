@@ -29,34 +29,67 @@ public class P1Controller : MonoBehaviour {
         // player one movement between Interactive Objects;
         if (Input.GetKeyDown(KeyCode.W)){
             childCounter++;
+            if (childCounter >= childArraySize)
+            {
+                childCounter = 1;
+            }
+
+            if (childCounter < 1)
+            {
+                childCounter = childArraySize - 1;
+            }
         }
         else  if (Input.GetKeyDown(KeyCode.S))
         {
             childCounter--;
+            if (childCounter >= childArraySize)
+            {
+                childCounter = 1;
+            }
+
+            if (childCounter < 1)
+            {
+                childCounter = childArraySize - 1;
+            }
      
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             childCounter++;
+            if (childCounter >= childArraySize)
+            {
+                childCounter = 1;
+            }
+
+            if (childCounter < 1)
+            {
+                childCounter = childArraySize - 1;
+            }
       
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             childCounter--;
+            if (childCounter >= childArraySize)
+            {
+                childCounter = 1;
+            }
+
+            if (childCounter < 1)
+            {
+                childCounter = childArraySize - 1;
+            }
 
         }
 
         //cap counter at array size and loop it
 
-      else  if (childCounter >= childArraySize ){
-            childCounter = 1;
-        }
-
-        if (childCounter < 1 )
-        {
-            childCounter = childArraySize-1;
-        }
+ 
         Debug.Log("P1 Counter = " + childCounter);
 	}
 
+
+
 }
+
+
