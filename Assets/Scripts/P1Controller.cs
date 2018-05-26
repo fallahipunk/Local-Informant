@@ -95,12 +95,13 @@ public class P1Controller : MonoBehaviour {
 
         }
 
-
- 
      //   Debug.Log("P1 Counter = " + childCounter);
 	}
 
     void activateObject(int index){
+        /*
+            [name] => [name]-p1-active
+        */
         //check of there is a game object in the array corrisponding to a index given
         if(childObjects[index]!= null){
            Material myMaterial = childObjects[index].GetComponent<Renderer>().material;
@@ -109,6 +110,11 @@ public class P1Controller : MonoBehaviour {
                 childObjects[index].GetComponent<Renderer>().material = activeMaterial;
             }
         }
+    }
+    void selectObject() {
+        /*
+         * Called when you're at an object that is selected. 
+         */
     }
 
 }
