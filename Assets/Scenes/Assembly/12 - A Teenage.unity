@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 52028596}
   - component: {fileID: 52028595}
   - component: {fileID: 52028594}
+  - component: {fileID: 52028598}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -263,6 +264,18 @@ Transform:
   m_Father: {fileID: 1963494234}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52028598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52028593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &267787991
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +287,7 @@ GameObject:
   - component: {fileID: 267787994}
   - component: {fileID: 267787993}
   - component: {fileID: 267787992}
+  - component: {fileID: 267787996}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -348,6 +362,18 @@ Transform:
   m_Father: {fileID: 1963494234}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &267787996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 267787991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &296904081
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +564,7 @@ GameObject:
   - component: {fileID: 1290101532}
   - component: {fileID: 1290101531}
   - component: {fileID: 1290101530}
+  - component: {fileID: 1290101534}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -612,6 +639,18 @@ Transform:
   m_Father: {fileID: 1963494234}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290101534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290101529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &1963494233
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +660,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1963494234}
   - component: {fileID: 1963494235}
+  - component: {fileID: 1963494237}
+  - component: {fileID: 1963494236}
   m_Layer: 0
   m_Name: Interactive Objects
   m_TagString: Untagged
@@ -659,7 +700,37 @@ MonoBehaviour:
   childCounter: 1
   childs: []
   childObjects: []
+  playerNumberString: p1-s
+  playerNumberStringSelection: p1-selected
   activeMaterial: {fileID: 0}
+  backupMaterial: {fileID: 2100000, guid: d6f922e575dc7409584261fcfea25ae8, type: 2}
+--- !u!114 &1963494236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963494233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b973a4cfe5d284e409d9292962943952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSelected: 0
+  childCounter2: 1
+  childs2: []
+  childObjects2: []
+--- !u!114 &1963494237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963494233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 1
 --- !u!1 &2030550981
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +742,7 @@ GameObject:
   - component: {fileID: 2030550984}
   - component: {fileID: 2030550983}
   - component: {fileID: 2030550982}
+  - component: {fileID: 2030550986}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -745,6 +817,18 @@ Transform:
   m_Father: {fileID: 1963494234}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2030550986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030550981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &2045453968
 GameObject:
   m_ObjectHideFlags: 0

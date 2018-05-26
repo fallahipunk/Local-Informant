@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 1024690414}
   - component: {fileID: 1024690413}
   - component: {fileID: 1024690412}
+  - component: {fileID: 1024690416}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -418,6 +419,18 @@ Transform:
   m_Father: {fileID: 1288045816}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1024690416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024690411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &1147278982
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +442,7 @@ GameObject:
   - component: {fileID: 1147278985}
   - component: {fileID: 1147278984}
   - component: {fileID: 1147278983}
+  - component: {fileID: 1147278987}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -503,6 +517,18 @@ Transform:
   m_Father: {fileID: 1288045816}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147278987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147278982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &1279201451
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +642,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1288045816}
   - component: {fileID: 1288045817}
+  - component: {fileID: 1288045819}
+  - component: {fileID: 1288045818}
   m_Layer: 0
   m_Name: Interactive Objects
   m_TagString: Untagged
@@ -654,7 +682,37 @@ MonoBehaviour:
   childCounter: 1
   childs: []
   childObjects: []
+  playerNumberString: p1-s
+  playerNumberStringSelection: p1-selected
   activeMaterial: {fileID: 0}
+  backupMaterial: {fileID: 2100000, guid: 6dd114fbcd1a04a369fe3de62d007f37, type: 2}
+--- !u!114 &1288045818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288045815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b973a4cfe5d284e409d9292962943952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSelected: 0
+  childCounter2: 1
+  childs2: []
+  childObjects2: []
+--- !u!114 &1288045819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288045815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 1
 --- !u!1 &1827607763
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +724,7 @@ GameObject:
   - component: {fileID: 1827607766}
   - component: {fileID: 1827607765}
   - component: {fileID: 1827607764}
+  - component: {fileID: 1827607768}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -740,6 +799,18 @@ Transform:
   m_Father: {fileID: 1288045816}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827607768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1827607763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &1881084556
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +822,7 @@ GameObject:
   - component: {fileID: 1881084559}
   - component: {fileID: 1881084558}
   - component: {fileID: 1881084557}
+  - component: {fileID: 1881084561}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -825,3 +897,15 @@ Transform:
   m_Father: {fileID: 1288045816}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881084561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881084556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0

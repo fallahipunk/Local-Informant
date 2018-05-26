@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 81722628}
   - component: {fileID: 81722627}
   - component: {fileID: 81722626}
+  - component: {fileID: 81722630}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -263,6 +264,18 @@ Transform:
   m_Father: {fileID: 1290106284}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &81722630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 81722625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &341060452
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +287,7 @@ GameObject:
   - component: {fileID: 341060455}
   - component: {fileID: 341060454}
   - component: {fileID: 341060453}
+  - component: {fileID: 341060457}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -348,6 +362,18 @@ Transform:
   m_Father: {fileID: 1290106284}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341060457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341060452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &389823878
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +538,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1290106284}
   - component: {fileID: 1290106285}
+  - component: {fileID: 1290106287}
+  - component: {fileID: 1290106286}
   m_Layer: 0
   m_Name: Interactive Objects
   m_TagString: Untagged
@@ -550,7 +578,37 @@ MonoBehaviour:
   childCounter: 1
   childs: []
   childObjects: []
+  playerNumberString: p1-s
+  playerNumberStringSelection: p1-selected
   activeMaterial: {fileID: 0}
+  backupMaterial: {fileID: 2100000, guid: f26b4970889d345eba6f1ca6b8c2e31f, type: 2}
+--- !u!114 &1290106286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290106283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 1
+--- !u!114 &1290106287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290106283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b973a4cfe5d284e409d9292962943952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSelected: 0
+  childCounter2: 1
+  childs2: []
+  childObjects2: []
 --- !u!1 &1504262200
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +651,7 @@ GameObject:
   - component: {fileID: 1830091006}
   - component: {fileID: 1830091005}
   - component: {fileID: 1830091004}
+  - component: {fileID: 1830091008}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -667,6 +726,18 @@ Transform:
   m_Father: {fileID: 1290106284}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830091008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1830091003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &2003816187
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +749,7 @@ GameObject:
   - component: {fileID: 2003816190}
   - component: {fileID: 2003816189}
   - component: {fileID: 2003816188}
+  - component: {fileID: 2003816192}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -753,6 +825,18 @@ Transform:
   m_Father: {fileID: 1290106284}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2003816192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003816187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &2025858512
 GameObject:
   m_ObjectHideFlags: 0
