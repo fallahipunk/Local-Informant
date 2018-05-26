@@ -60,6 +60,7 @@ public class P1Controller : MonoBehaviour {
             }
             activateObject(childCounter);
         }
+
          if (Input.GetKeyDown(KeyCode.D))
         {
             childCounter++;
@@ -77,6 +78,8 @@ public class P1Controller : MonoBehaviour {
             activateObject(childCounter);
       
         }
+
+
          if (Input.GetKeyDown(KeyCode.A))
         {
             childCounter--;
@@ -93,6 +96,13 @@ public class P1Controller : MonoBehaviour {
             }
             activateObject(childCounter);
 
+        }
+
+
+        // -------- Selection Input ------- //
+
+        if ( Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.V)){
+            selectObject();
         }
 
      //   Debug.Log("P1 Counter = " + childCounter);
@@ -154,10 +164,11 @@ public class P1Controller : MonoBehaviour {
         }
     }
     void selectObject() {
-        /*
-         * Called when you're at an object that is active. 
-         */
-    }
+        Debug.Log(childObjects[childCounter] + " is Selected!");
+            
+            }
+        
+   
 
 }
 
