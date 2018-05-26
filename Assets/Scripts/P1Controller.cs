@@ -10,6 +10,8 @@ public class P1Controller : MonoBehaviour {
     public Transform[] childs;
     public GameObject[] childObjects;
 
+    public Material activeMaterial;
+
     void Start()
     {
             // create array containing all children, to be used on the Interactive Objects game object
@@ -29,6 +31,8 @@ public class P1Controller : MonoBehaviour {
         // player one movement between Interactive Objects;
         if (Input.GetKeyDown(KeyCode.W)){
             childCounter++;
+
+            //cap counter at array size and loop it
             if (childCounter >= childArraySize)
             {
                 childCounter = 1;
@@ -38,10 +42,13 @@ public class P1Controller : MonoBehaviour {
             {
                 childCounter = childArraySize - 1;
             }
+            activateObject(childCounter);
         }
         else  if (Input.GetKeyDown(KeyCode.S))
         {
             childCounter--;
+
+            //cap counter at array size and loop it
             if (childCounter >= childArraySize)
             {
                 childCounter = 1;
@@ -51,11 +58,13 @@ public class P1Controller : MonoBehaviour {
             {
                 childCounter = childArraySize - 1;
             }
-     
+            activateObject(childCounter);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             childCounter++;
+
+            //cap counter at array size and loop it
             if (childCounter >= childArraySize)
             {
                 childCounter = 1;
@@ -65,11 +74,14 @@ public class P1Controller : MonoBehaviour {
             {
                 childCounter = childArraySize - 1;
             }
+            activateObject(childCounter);
       
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             childCounter--;
+
+            //cap counter at array size and loop it
             if (childCounter >= childArraySize)
             {
                 childCounter = 1;
@@ -79,16 +91,25 @@ public class P1Controller : MonoBehaviour {
             {
                 childCounter = childArraySize - 1;
             }
+            activateObject(childCounter);
 
         }
 
-        //cap counter at array size and loop it
 
  
-        Debug.Log("P1 Counter = " + childCounter);
+     //   Debug.Log("P1 Counter = " + childCounter);
 	}
 
-
+    void activateObject(int index){
+        //check of there is a game object in the array corrisponding to a index given
+        if(childObjects[index]!= null){
+           Material myMaterial = childObjects[index].GetComponent<Renderer>().material;
+            if (myMaterial !=null){
+                Debug.Log(childObjects[index] + " is now active");
+                childObjects[index].GetComponent<Renderer>().material = activeMaterial;
+            }
+        }
+    }
 
 }
 
