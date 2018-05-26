@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P1Controller : MonoBehaviour {
+public class P1Controller : MonoBehaviour
+{
 
     int childArrayValue = 0;
     int childArraySize;
     public int childCounter = 1;
     public Transform[] childs;
     public GameObject[] childObjects;
+    public string playerNumberString = "p1-s";
+    public string playerNumberStringSelection = "p1-selected";
 
     public Material activeMaterial;
+    public Material backupMaterial;
 
     void Start()
     {
-            // create array containing all children, to be used on the Interactive Objects game object
+        // create array containing all children, to be used on the Interactive Objects game object
         childs = gameObject.GetComponentsInChildren<Transform>();
         childArraySize = childs.Length;
         childObjects = new GameObject[childArraySize];
@@ -25,11 +29,13 @@ public class P1Controller : MonoBehaviour {
             childObjects.SetValue(trans.gameObject, childArrayValue - 1);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         // player one movement between Interactive Objects;
-        if (Input.GetKeyDown(KeyCode.W)){
+        if (Input.GetKeyDown(KeyCode.W))
+        {
             childCounter++;
 
             //cap counter at array size and loop it
@@ -44,7 +50,7 @@ public class P1Controller : MonoBehaviour {
             }
             activateObject(childCounter);
         }
-          if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             childCounter--;
 
@@ -61,7 +67,7 @@ public class P1Controller : MonoBehaviour {
             activateObject(childCounter);
         }
 
-         if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             childCounter++;
 
@@ -76,11 +82,11 @@ public class P1Controller : MonoBehaviour {
                 childCounter = childArraySize - 1;
             }
             activateObject(childCounter);
-      
+
         }
 
 
-         if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             childCounter--;
 
@@ -101,14 +107,16 @@ public class P1Controller : MonoBehaviour {
 
         // -------- Selection Input ------- //
 
-        if ( Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.V)){
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.V))
+        {
             selectObject();
         }
 
-     //   Debug.Log("P1 Counter = " + childCounter);
-	}
+        //   Debug.Log("P1 Counter = " + childCounter);
+    }
 
-    void activateObject(int index){
+    void activateObject(int index)
+    {
         /*
             [name] => [name]-p1-active
 
@@ -120,56 +128,111 @@ public class P1Controller : MonoBehaviour {
         string playerNumberString = "-p1-active";
 
         //first, turn all objects inactive:
-        foreach(GameObject g in childObjects) {
+        foreach (GameObject g in childObjects)
+        {
             Renderer rnd = g.GetComponent<Renderer>();
-            if (rnd != null) {
+            if (rnd != null)
+            {
                 string currentMaterialName = g.GetComponent<Renderer>().material.name;
-                if (currentMaterialName.Contains(playerNumberString))  {
+                if (currentMaterialName.Contains(playerNumberString))
+                {
                     currentMaterialName = currentMaterialName.Remove(currentMaterialName.Length - 11 - playerNumberString.Length);
                     // remove 11 for " (instance)" and 10 for playerNumberString
                     Material switchToThis = Resources.Load(currentMaterialName, typeof(Material)) as Material;
-                    if (switchToThis != null){
+                    if (switchToThis != null)
+                    {
                         // if loaded correctly, then change the material.
                         // print("Going to load " + currentMaterialName);
                         rnd.material = switchToThis;
-                    } else {
-                        Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
+                    }
+                    else
+                    {
+                        // Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
+                        if (backupMaterial != null)
+                        {
+                            rnd.material = backupMaterial;
+                        }
                     }
                 }
             }
         }
 
         //check of there is a game object in the array corrisponding to a index given
-        if(childObjects[index]!= null){
+        if (childObjects[index] != null)
+        {
             Renderer rnd = childObjects[index].GetComponent<Renderer>();
-            if (rnd !=null){
+            if (rnd != null)
+            {
                 string currentMaterialName = rnd.material.name;
                 currentMaterialName = currentMaterialName.Remove(currentMaterialName.Length - 11); // remove " (Instance)" from the name (11 chars)
-                if (!currentMaterialName.Contains(playerNumberString)) {
+                if (!currentMaterialName.Contains(playerNumberString))
+                {
                     currentMaterialName = currentMaterialName + playerNumberString;
                     print(currentMaterialName + " after add");
 
                     // use that string to load the correct material:
                     Material switchToThis = Resources.Load(currentMaterialName, typeof(Material)) as Material;
-                    if (switchToThis != null) {
+                    if (switchToThis != null)
+                    {
                         // if loaded correctly, then change the material.
                         //print("Going to load " + currentMaterialName);
                         rnd.material = switchToThis;
-                    } else {
-                        Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
+                    }
+                    else
+                    {
+                        // Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
+                        if (backupMaterial != null)
+                        {
+                            rnd.material = backupMaterial;
+                        }
                     }
                 }
                 //Debug.Log(childObjects[index] + " is now active");
             }
         }
     }
-    void selectObject() {
+    void selectObject()
+    {
+
         Debug.Log(childObjects[childCounter] + " is Selected!");
-            
+        if (childObjects[childCounter] != null)
+        {
+            Renderer rnd = childObjects[childCounter].GetComponent<Renderer>();
+            if (rnd != null)
+            {
+                string currentMaterialName = rnd.material.name;
+                currentMaterialName = currentMaterialName.Remove(currentMaterialName.Length - 20); // remove " (Instance)" from the name (11 chars)
+                if (!currentMaterialName.Contains(playerNumberStringSelection))
+                {
+                    currentMaterialName = currentMaterialName + playerNumberStringSelection;
+                    print(currentMaterialName + " after add");
+
+                    // use that string to load the correct material:
+                    Material switchToThis = Resources.Load(currentMaterialName, typeof(Material)) as Material;
+                    if (switchToThis != null)
+                    {
+                        // if loaded correctly, then change the material.
+                        //print("Going to load " + currentMaterialName);
+                        rnd.material = switchToThis;
+                    }
+                    else
+                    {
+                        //  Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
+
+                        rnd.material = Resources.Load(currentMaterialName, typeof(Material)) as Material;
+
+
+                    }
+                    //Debug.Log(childObjects[index] + " is now active");
+                }
             }
+
+        }
+    }
+}
         
    
 
-}
+
 
 
