@@ -106,7 +106,7 @@ public class P1Controller : MonoBehaviour {
             Material newMat = Resources.Load("DEV_Orange", typeof(Material)) as Material;
             gameObject.renderer.material = newMat;
         */
-        //
+        // change this line for player 2. It should work?
         string playerNumberString = "-p1-active";
 
         //first, turn all objects inactive:
