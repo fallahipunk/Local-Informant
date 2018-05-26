@@ -1935,6 +1935,7 @@ GameObject:
   - component: {fileID: 2094832706}
   - component: {fileID: 2094832707}
   - component: {fileID: 2094832708}
+  - component: {fileID: 2094832709}
   m_Layer: 0
   m_Name: Interactive Objects
   m_TagString: Untagged
@@ -2019,6 +2020,24 @@ MonoBehaviour:
   childCounter2: 1
   childs2: []
   childObjects2: []
+--- !u!114 &2094832709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094832704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7586259734687aa22fd917db91a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCounter: 1
+  childs: []
+  childObjects: []
+  playerNumberString: p2-s
+  playerNumberStringSelection: p2-selected
+  activeMaterial: {fileID: 0}
+  backupMaterial: {fileID: 2100000, guid: db889fba4505ead419105ef65d8c7a00, type: 2}
 --- !u!1 &2098089449
 GameObject:
   m_ObjectHideFlags: 0

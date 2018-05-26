@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 1193670605}
   - component: {fileID: 1193670607}
   - component: {fileID: 1193670606}
+  - component: {fileID: 1193670608}
   m_Layer: 0
   m_Name: Interactive Objects
   m_TagString: Untagged
@@ -686,6 +687,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 1
+--- !u!114 &1193670608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193670603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32a7586259734687aa22fd917db91a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCounter: 1
+  childs: []
+  childObjects: []
+  playerNumberString: p2-s
+  playerNumberStringSelection: p2-selected
+  activeMaterial: {fileID: 0}
+  backupMaterial: {fileID: 2100000, guid: db889fba4505ead419105ef65d8c7a00, type: 2}
 --- !u!1 &1212672597
 GameObject:
   m_ObjectHideFlags: 0
