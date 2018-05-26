@@ -6,6 +6,8 @@ public class SelectionManager : MonoBehaviour {
 
     public bool allSelected;
 
+    public int lvl;
+
     int childArrayValue2 = 0;
     int childArraySize2;
     public int childCounter2 = 1;
@@ -33,8 +35,19 @@ public class SelectionManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        allSelected = IsAllSelected();
-        Debug.Log(allSelected);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            allSelected = IsAllSelected();
+            Debug.Log(allSelected);
+            if(allSelected == true){
+                if (lvl !=null){
+                    Application.LoadLevel(lvl);
+                }
+                else{
+                    Application.LoadLevel(0);
+                }
+            }
+        }
 
 	}
 

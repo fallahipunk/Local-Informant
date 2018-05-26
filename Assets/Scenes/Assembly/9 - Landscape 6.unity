@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366393016}
   m_Layer: 0
-  m_Name: 8 - Landscape
+  m_Name: 9 - Landscape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allSelected: 0
+  lvl: 9
   childCounter2: 1
   childs2: []
   childObjects2: []
