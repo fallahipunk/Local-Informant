@@ -44,7 +44,7 @@ public class P1Controller : MonoBehaviour {
             }
             activateObject(childCounter);
         }
-        else  if (Input.GetKeyDown(KeyCode.S))
+          if (Input.GetKeyDown(KeyCode.S))
         {
             childCounter--;
 
@@ -60,7 +60,7 @@ public class P1Controller : MonoBehaviour {
             }
             activateObject(childCounter);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+         if (Input.GetKeyDown(KeyCode.D))
         {
             childCounter++;
 
@@ -77,7 +77,7 @@ public class P1Controller : MonoBehaviour {
             activateObject(childCounter);
       
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+         if (Input.GetKeyDown(KeyCode.A))
         {
             childCounter--;
 
