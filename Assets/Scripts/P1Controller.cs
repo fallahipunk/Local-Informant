@@ -194,6 +194,13 @@ public class P1Controller : MonoBehaviour
     void selectObject()
     {
 
+        // checl isSelected bool true in child object
+        if (childObjects[childCounter] != null)
+        {
+            childObjects[childCounter].GetComponent<Stats>().isSelected = true;
+        }
+
+        // change material
         Debug.Log(childObjects[childCounter] + " is Selected!");
         if (childObjects[childCounter] != null)
         {
