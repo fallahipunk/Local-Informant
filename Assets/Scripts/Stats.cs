@@ -8,7 +8,7 @@ public class Stats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        isSelected =  false;
+       
 	}
 	
 	// Update is called once per frame

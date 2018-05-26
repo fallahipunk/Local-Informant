@@ -568,6 +568,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1984933151}
   - component: {fileID: 1984933152}
+  - component: {fileID: 1984933154}
+  - component: {fileID: 1984933153}
   m_Layer: 0
   m_Name: InteractiveObjects
   m_TagString: Untagged
@@ -608,3 +610,30 @@ MonoBehaviour:
   playerNumberStringSelection: p1-selected
   activeMaterial: {fileID: 0}
   backupMaterial: {fileID: 2100000, guid: 395ccafc18dba47a593ba7854ebf115a, type: 2}
+--- !u!114 &1984933153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984933150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b973a4cfe5d284e409d9292962943952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSelected: 0
+  childCounter2: 1
+  childs2: []
+  childObjects2: []
+--- !u!114 &1984933154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984933150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 1
