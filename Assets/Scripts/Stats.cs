@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour {
 
     public bool isSelected;
+    public bool isActive;
 
 	// Use this for initialization
 	void Start () {

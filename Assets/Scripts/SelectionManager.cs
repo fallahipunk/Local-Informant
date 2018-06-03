@@ -17,6 +17,7 @@ public class SelectionManager : MonoBehaviour {
 
     void Start()
     {
+        Cursor.visible = false;
      
 
         // create array containing all children, to be used on the Interactive Objects game object
@@ -35,10 +36,16 @@ public class SelectionManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKeyDown)
         {
             allSelected = IsAllSelected();
             Debug.Log(allSelected);
+
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+            
             if(allSelected == true){
                 if (lvl !=null){
                     Application.LoadLevel(lvl);
