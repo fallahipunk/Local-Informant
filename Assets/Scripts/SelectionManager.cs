@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectionManager : MonoBehaviour {
 
@@ -35,11 +36,11 @@ public class SelectionManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        
         if (Input.anyKeyDown)
         {
-            allSelected = IsAllSelected();
-            Debug.Log(allSelected);
+            allSelected = AreAllSelected();
+           // Debug.Log(allSelected);
 
         }
 
@@ -47,18 +48,15 @@ public class SelectionManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space)){
             
             if(allSelected == true){
-                if (lvl !=null){
-                    Application.LoadLevel(lvl);
-                }
-                else{
-                    Application.LoadLevel(0);
-                }
+             
+                SceneManager.LoadScene(lvl);
+
             }
         }
 
 	}
 
-    private bool IsAllSelected()
+    private bool AreAllSelected()
     {
         for (int i = 0; i < childObjects2.Length; ++i)
         {
