@@ -120,18 +120,18 @@ public class P2Controller : MonoBehaviour
 
         if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
         {
-            if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected == true)
-            {
-                if (gameObject.GetComponent<SelectionManager>().allSelected != true)
-                {
-                    moveUp();
-                }
-            }
-            else
-            {
+            //if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected == true)
+            //{
+            //    if (gameObject.GetComponent<SelectionManager>().allSelected != true)
+            //    {
+            //        moveUp();
+            //    }
+            //}
+            //else
+            //{
                 //activate next unselected object
                 activateObject(p2ChildCounter);
-            }
+           // }
         }
 
 
@@ -154,21 +154,21 @@ public class P2Controller : MonoBehaviour
             p2ChildCounter = childArraySize - 1;
         }
 
-        if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
-        {
-            if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected == true)
-            {
-                if (gameObject.GetComponent<SelectionManager>().allSelected != true)
-                {
-                    moveDown();
-                }
-            }
-            else
-            {
+        //if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
+        //{
+            ////if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected == true)
+            ////{
+            //    //if (gameObject.GetComponent<SelectionManager>().allSelected != true)
+            //    //{
+            //        moveDown();
+            //  //  }
+            //}
+            //else
+            //{
                 //activate previous unselected object
                 activateObject(p2ChildCounter);
-            }
-        }
+        //    }
+        //}
 
     }
 

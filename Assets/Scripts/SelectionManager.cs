@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SelectionManager : MonoBehaviour
 {
     public Transform BgPrefab;
+    private bool BgVisable;
+
     public int lvl;
 
     public bool allSelected;
@@ -24,6 +26,7 @@ public class SelectionManager : MonoBehaviour
     {
         Cursor.visible = false;
 
+        BgVisable = false;
 
         // create array containing all children, to be used on the Interactive Objects game object
         childs2 = gameObject.GetComponentsInChildren<Transform>();
@@ -85,8 +88,11 @@ public class SelectionManager : MonoBehaviour
 
         void ShowBG()
         {
-
-        Instantiate(BgPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        if (BgPrefab != null && BgVisable == false)
+        {
+            Instantiate(BgPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            BgVisable = true;
+        }
         }
 
     }

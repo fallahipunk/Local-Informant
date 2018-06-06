@@ -115,25 +115,25 @@ public class P1Controller : MonoBehaviour
 
         //Skip Selected Objects
 
-        if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>() != null)
-        {
-            if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>().isSelected == true)
-            {
-                if (gameObject.GetComponent<SelectionManager>().allSelected != true)
-                {
-                    moveUp();
-                }
-            }
-            else
-            {
+        //if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>() != null)
+        //{
+            //if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>().isSelected == true)
+            //{
+            //    if (gameObject.GetComponent<SelectionManager>().allSelected != true)
+            //    {
+            //        moveUp();
+            //    }
+            //}
+            //else
+            //{
                 //activate next unselected object
                 activateObject(p1ChildCounter);
-            }
+         //   }
         }
 
 
 
-    }
+
 
     void moveDown()
     {
@@ -151,21 +151,21 @@ public class P1Controller : MonoBehaviour
             p1ChildCounter = childArraySize - 1;
         }
 
-        if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>() != null)
-        {
-            if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>().isSelected == true)
-            {
-                if (gameObject.GetComponent<SelectionManager>().allSelected != true)
-                {
-                    moveDown();
-                }
-            }
-            else
-            {
+        //if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>() != null)
+        //{
+            //if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>().isSelected == true)
+            //{
+            //    if (gameObject.GetComponent<SelectionManager>().allSelected != true)
+            //    {
+            //        moveDown();
+            //    }
+            //}
+            //else
+            //{
                 //activate previous unselected object
                 activateObject(p1ChildCounter);
-            }
-        }
+          //  }
+      //  }
 
     }
 

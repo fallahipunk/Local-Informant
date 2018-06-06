@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!1 &815060338
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +311,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!1 &953786754
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!1 &1042933215
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!1 &1126120836
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!1 &1396825823
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!1 &1818278125
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,13 +947,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654b0a2993ac3467fb412638a07ed238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childCounter: 1
-  childs: []
-  childObjects: []
+  p1ChildCounter: 1
+  p1Childs: []
+  p1ChildObjects: []
   playerNumberString: p1-s
-  playerNumberStringSelection: p1-selected
-  activeMaterial: {fileID: 0}
-  backupMaterial: {fileID: 2100000, guid: f26b4970889d345eba6f1ca6b8c2e31f, type: 2}
+  activeMaterialString: 
+  selectedMaterialString: 
+  p1ActiveMaterial: {fileID: 0}
+  p1SelectedMaterial: {fileID: 0}
 --- !u!114 &1992341521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,8 +966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b973a4cfe5d284e409d9292962943952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allSelected: 0
+  BgPrefab: {fileID: 4686363821638866, guid: c1400788d2c0049d5a07112b19fa8995, type: 2}
   lvl: 0
+  allSelected: 0
   childCounter2: 1
   childs2: []
   childObjects2: []
@@ -970,6 +984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 1
+  scaleRate: 0.01
+  originalMaterial: {fileID: 0}
 --- !u!114 &1992341523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,13 +997,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32a7586259734687aa22fd917db91a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childCounter: 1
-  childs: []
-  childObjects: []
+  p2ChildCounter: 1
+  p2Childs: []
+  p2ChildObjects: []
   playerNumberString: p2-s
-  playerNumberStringSelection: p2-selected
-  activeMaterial: {fileID: 0}
-  backupMaterial: {fileID: 2100000, guid: d95e332d9fb0b4b73b5b110ee4369a95, type: 2}
+  activeMaterialString: 
+  selectedMaterialString: 
+  p2ActiveMaterial: {fileID: 0}
+  p2SelectedMaterial: {fileID: 0}
 --- !u!1 &2091415001
 GameObject:
   m_ObjectHideFlags: 0
