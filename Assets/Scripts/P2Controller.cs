@@ -1,31 +1,49 @@
-﻿using System.Collections;
+﻿
+
+//Player 1 controller script, to be places on the Interactive objects 
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P2Controller : MonoBehaviour{
+public class P2Controller : MonoBehaviour
+{
 
+    //Interactive Objects (children) Vars
     int childArrayValue = 0;
     int childArraySize;
-    public int childCounter = 1;
-    public Transform[] childs;
-    public GameObject[] childObjects;
-    public string playerNumberString = "p2-s";
-    public string playerNumberStringSelection = "p2-selected";
+    public int p2ChildCounter = 1;
+    public Transform[] p2Childs;
+    public GameObject[] p2ChildObjects;
+    int p2LastObjectIndex = 1;
 
-    public Material activeMaterial;
-    public Material backupMaterial;
+    //Matarial Vars
+
+    public string playerNumberString;
+    public string activeMaterialString;
+    public string selectedMaterialString;
+
+
+    public Material p2ActiveMaterial;
+    public Material p2SelectedMaterial;
 
     void Start()
     {
-        // create array containing all children, to be used on the Interactive Objects game object
-        childs = gameObject.GetComponentsInChildren<Transform>();
-        childArraySize = childs.Length;
-        childObjects = new GameObject[childArraySize];
+        // initiate different parts of material names
+        playerNumberString = "-p2";
+        activeMaterialString = "-active";
+        selectedMaterialString = "-selected";
 
-        foreach (Transform trans in childs)
+
+        // create array containing all children
+        p2Childs = gameObject.GetComponentsInChildren<Transform>();
+        childArraySize = p2Childs.Length;
+        p2ChildObjects = new GameObject[childArraySize];
+
+        foreach (Transform trans in p2Childs)
         {
             childArrayValue++;
-            childObjects.SetValue(trans.gameObject, childArrayValue - 1);
+            p2ChildObjects.SetValue(trans.gameObject, childArrayValue - 1);
         }
     }
 
@@ -33,74 +51,37 @@ public class P2Controller : MonoBehaviour{
     void Update()
     {
         // player one movement between Interactive Objects;
-		if (Input.GetKeyDown(KeyCode.UpArrow))
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            childCounter++;
+            p2LastObjectIndex = p2ChildCounter;
 
-            //cap counter at array size and loop it
-            if (childCounter >= childArraySize)
-            {
-                childCounter = 1;
-            }
 
-            if (childCounter < 1)
-            {
-                childCounter = childArraySize - 1;
-            }
-            activateObject(childCounter);
+            moveUp();
+
         }
-		if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            childCounter--;
+            p2LastObjectIndex = p2ChildCounter;
 
-            //cap counter at array size and loop it
-            if (childCounter >= childArraySize)
-            {
-                childCounter = 1;
-            }
 
-            if (childCounter < 1)
-            {
-                childCounter = childArraySize - 1;
-            }
-            activateObject(childCounter);
+            moveDown();
         }
 
-		if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            childCounter++;
+            p2LastObjectIndex = p2ChildCounter;
 
-            //cap counter at array size and loop it
-            if (childCounter >= childArraySize)
-            {
-                childCounter = 1;
-            }
 
-            if (childCounter < 1)
-            {
-                childCounter = childArraySize - 1;
-            }
-            activateObject(childCounter);
-
+            moveUp();
         }
 
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            childCounter--;
+            p2LastObjectIndex = p2ChildCounter;
 
-            //cap counter at array size and loop it
-            if (childCounter >= childArraySize)
-            {
-                childCounter = 1;
-            }
-
-            if (childCounter < 1)
-            {
-                childCounter = childArraySize - 1;
-            }
-            activateObject(childCounter);
-
+            moveDown();
         }
 
 
@@ -108,131 +89,163 @@ public class P2Controller : MonoBehaviour{
 
         if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M))
         {
-            selectObject();
+            selectObject(p2ChildCounter);
         }
 
-        //   Debug.Log("P1 Counter = " + childCounter);
+        //   Debug.Log("p2 Counter = " + childCounter);
     }
+
+
+
+    void moveUp()
+    {
+
+
+
+        p2ChildCounter++;
+
+        //cap counter at array size and loop it
+        if (p2ChildCounter >= childArraySize)
+        {
+            p2ChildCounter = 1;
+        }
+
+        if (p2ChildCounter < 1)
+        {
+            p2ChildCounter = childArraySize - 1;
+        }
+
+        //Skip Selected Objects
+
+        if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
+        {
+            if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected == true)
+            {
+                if (gameObject.GetComponent<SelectionManager>().allSelected != true)
+                {
+                    moveUp();
+                }
+            }
+            else
+            {
+                //activate next unselected object
+                activateObject(p2ChildCounter);
+            }
+        }
+
+
+
+    }
+
+    void moveDown()
+    {
+
+        p2ChildCounter--;
+
+        //cap counter at array size and loop it
+        if (p2ChildCounter >= childArraySize)
+        {
+            p2ChildCounter = 1;
+        }
+
+        if (p2ChildCounter < 1)
+        {
+            p2ChildCounter = childArraySize - 1;
+        }
+
+        if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
+        {
+            if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected == true)
+            {
+                if (gameObject.GetComponent<SelectionManager>().allSelected != true)
+                {
+                    moveDown();
+                }
+            }
+            else
+            {
+                //activate previous unselected object
+                activateObject(p2ChildCounter);
+            }
+        }
+
+    }
+
+
+    //-----Activate Function -----//
 
     void activateObject(int index)
     {
-        /*
-            [name] => [name]-p1-active
+        //get the base material name
+        string instanceName = p2ChildObjects[index].GetComponent<Stats>().originalMaterial.name;
+        string originalMaterialName = instanceName.Remove(instanceName.Length - 11);
 
-            // Assigns a material named "Assets/Resources/DEV_Orange" to the object.
-            Material newMat = Resources.Load("DEV_Orange", typeof(Material)) as Material;
-            gameObject.renderer.material = newMat;
-        */
-        // change this line for player 2. It should work?
-        string playerNumberString = "-p2-active";
 
-        //first, turn all objects inactive:
-        foreach (GameObject g in childObjects)
+        // if last object was not selected retern it to its original material
+        if (!p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().isSelected)
         {
-            Renderer rnd = g.GetComponent<Renderer>();
-            if (rnd != null)
-            {
-                string currentMaterialName = g.GetComponent<Renderer>().material.name;
-                if (currentMaterialName.Contains(playerNumberString))
-                {
-                    currentMaterialName = currentMaterialName.Remove(currentMaterialName.Length - 11 - playerNumberString.Length);
-                    // remove 11 for " (instance)" and 10 for playerNumberString
-                    Material switchToThis = Resources.Load(currentMaterialName, typeof(Material)) as Material;
-                    if (switchToThis != null)
-                    {
-                        // if loaded correctly, then change the material.
-                        // print("Going to load " + currentMaterialName);
-                        rnd.material = switchToThis;
-                    }
-                    else
-                    {
-                        // Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
-                        if (backupMaterial != null)
-                        {
-                            rnd.material = backupMaterial;
-                        }
-                    }
-                }
-            }
+            p2ChildObjects[p2LastObjectIndex].GetComponent<Renderer>().material = p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().originalMaterial;
         }
 
-        //check of there is a game object in the array corrisponding to a index given
-        if (childObjects[index] != null)
-        {
-            Renderer rnd = childObjects[index].GetComponent<Renderer>();
-            if (rnd != null)
-            {
-                string currentMaterialName = rnd.material.name;
-                currentMaterialName = currentMaterialName.Remove(currentMaterialName.Length - 11); // remove " (Instance)" from the name (11 chars)
-                if (!currentMaterialName.Contains(playerNumberString))
-                {
-                    currentMaterialName = currentMaterialName + playerNumberString;
-                    print(currentMaterialName + " after add");
+        //compose a the full active material name
+        string activeMaterialName = originalMaterialName + playerNumberString + activeMaterialString;
 
-                    // use that string to load the correct material:
-                    Material switchToThis = Resources.Load(currentMaterialName, typeof(Material)) as Material;
-                    if (switchToThis != null)
-                    {
-                        // if loaded correctly, then change the material.
-                        //print("Going to load " + currentMaterialName);
-                        rnd.material = switchToThis;
-                    }
-                    else
-                    {
-                        // Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
-                        if (backupMaterial != null)
-                        {
-                            rnd.material = backupMaterial;
-                        }
-                    }
-                }
-                //Debug.Log(childObjects[index] + " is now active");
-            }
+
+        if (Resources.Load(activeMaterialName, typeof(Material)) as Material != null)
+        {
+            p2ActiveMaterial = Resources.Load(activeMaterialName, typeof(Material)) as Material;
         }
+
+        if (p2ActiveMaterial == null)
+        {
+            p2ActiveMaterial = p2ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material; ;
+        }
+        p2ChildObjects[index].GetComponent<Renderer>().material = p2ActiveMaterial;
+
+        Debug.Log(activeMaterialName);
+
     }
-    void selectObject()
+
+    //------- Selection Function -------//
+
+    void selectObject(int index)
     {
 
-        // checl isSelected bool true in child object
-        if (childObjects[childCounter] != null)
+        // set the isSelected flag in the Stats component to true
+        if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
         {
-            childObjects[childCounter].GetComponent<Stats>().isSelected = true;
+            p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected = true;
         }
 
-        // change material
-        Debug.Log(childObjects[childCounter] + " is Selected!");
-        if (childObjects[childCounter] != null)
+        //get the base material name
+        string instanceName = p2ChildObjects[index].GetComponent<Stats>().originalMaterial.name;
+        string originalMaterialName = instanceName.Remove(instanceName.Length - 11);
+
+
+        //compose a the full selected material name
+        string selectedMaterialName = originalMaterialName + playerNumberString + selectedMaterialString;
+
+
+        if (Resources.Load(selectedMaterialName, typeof(Material)) as Material != null)
         {
-            Renderer rnd = childObjects[childCounter].GetComponent<Renderer>();
-            if (rnd != null)
-            {
-                string currentMaterialName = rnd.material.name;
-                currentMaterialName = currentMaterialName.Remove(currentMaterialName.Length - 20); // remove " (Instance)" from the name (11 chars)
-                if (!currentMaterialName.Contains(playerNumberStringSelection))
-                {
-                    currentMaterialName = currentMaterialName + playerNumberStringSelection;
-                    print(currentMaterialName + " after add");
-
-                    // use that string to load the correct material:
-                    Material switchToThis = Resources.Load(currentMaterialName, typeof(Material)) as Material;
-                    if (switchToThis != null)
-                    {
-                        // if loaded correctly, then change the material.
-                        //print("Going to load " + currentMaterialName);
-                        rnd.material = switchToThis;
-                    }
-                    else
-                    {
-                        //  Debug.LogError("P1Controller.activateObject did not load a new texture for naviation. Name of texture: " + currentMaterialName);
-
-                        rnd.material = Resources.Load(currentMaterialName, typeof(Material)) as Material;
-
-
-                    }
-                    //Debug.Log(childObjects[index] + " is now active");
-                }
-            }
-
+            p2SelectedMaterial = Resources.Load(selectedMaterialName, typeof(Material)) as Material;
         }
+
+        if (p2SelectedMaterial == null || p2ChildObjects[index].GetComponent<Renderer>().material.name == selectedMaterialName + " (Instance)")
+        {
+            p2SelectedMaterial = p2ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material; ;
+        }
+
+        p2ChildObjects[index].GetComponent<Renderer>().material = p2SelectedMaterial;
+
+
+        Debug.Log(selectedMaterialName);
+
     }
 }
+
+
+
+
+
+

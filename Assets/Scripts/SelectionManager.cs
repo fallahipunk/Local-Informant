@@ -60,8 +60,12 @@ public class SelectionManager : MonoBehaviour {
     {
         for (int i = 0; i < childObjects2.Length; ++i)
         {
-            if (childObjects2[i].GetComponent<Stats>().isSelected == false){
-                return false;
+            if (childObjects2[i].GetComponent<Stats>())
+            {
+                if (childObjects2[i].GetComponent<Stats>().isSelected == false)
+                {
+                    return false;
+                }
             }
      
         }

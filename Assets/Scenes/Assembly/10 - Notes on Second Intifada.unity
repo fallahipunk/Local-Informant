@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
-  isActive: 0
+  scaleRate: 0.001
   originalMaterial: {fileID: 0}
 --- !u!1 &421270567
 GameObject:
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
-  isActive: 0
+  scaleRate: 0.001
   originalMaterial: {fileID: 0}
 --- !u!1 &660622150
 GameObject:
@@ -616,9 +616,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1193670604}
   - component: {fileID: 1193670605}
-  - component: {fileID: 1193670607}
   - component: {fileID: 1193670606}
-  - component: {fileID: 1193670608}
+  - component: {fileID: 1193670607}
   m_Layer: 0
   m_Name: Interactive Objects
   m_TagString: Untagged
@@ -659,18 +658,11 @@ MonoBehaviour:
   p1ChildCounter: 1
   p1Childs: []
   p1ChildObjects: []
-  baseMaterialString:
-  - gold
-  - gold-stripe
-  - stone
-  - sand
-  - plant
-  - plant
   playerNumberString: p1-s
   activeMaterialString: -active
   selectedMaterialString: -selected
   p1ActiveMaterial: {fileID: 0}
-  p1BackupMaterial: {fileID: 2100000, guid: f26b4970889d345eba6f1ca6b8c2e31f, type: 2}
+  p1SelectedMaterial: {fileID: 0}
 --- !u!114 &1193670606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,30 +687,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1193670603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a85ea622ac0943949e2a6cc7559bd62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSelected: 1
-  isActive: 0
-  originalMaterial: {fileID: 0}
---- !u!114 &1193670608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1193670603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c32a7586259734687aa22fd917db91a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childCounter: 1
-  childs: []
-  childObjects: []
-  playerNumberString: p2-s
-  playerNumberStringSelection: p2-selected
-  activeMaterial: {fileID: 0}
-  backupMaterial: {fileID: 2100000, guid: db889fba4505ead419105ef65d8c7a00, type: 2}
+  p2ChildCounter: 1
+  p2Childs: []
+  p2ChildObjects: []
+  playerNumberString: 
+  activeMaterialString: 
+  selectedMaterialString: 
+  p2ActiveMaterial: {fileID: 0}
+  p2SelectedMaterial: {fileID: 0}
 --- !u!1 &1212672597
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
-  isActive: 0
+  scaleRate: 0.001
   originalMaterial: {fileID: 0}
 --- !u!1 &1236861870
 GameObject:
@@ -917,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
-  isActive: 0
+  scaleRate: 0.001
   originalMaterial: {fileID: 0}
 --- !u!1 &1862160403
 GameObject:
@@ -1017,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
-  isActive: 0
+  scaleRate: 0.001
   originalMaterial: {fileID: 0}
 --- !u!1 &2073666711
 GameObject:
@@ -1117,7 +1096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
-  isActive: 0
+  scaleRate: 0.001
   originalMaterial: {fileID: 0}
 --- !u!1 &2129119465
 GameObject:

@@ -227,7 +227,7 @@ public class P1Controller : MonoBehaviour
             p1SelectedMaterial = Resources.Load(selectedMaterialName, typeof(Material)) as Material;
         }
 
-        if (p1SelectedMaterial == null)
+        if (p1SelectedMaterial == null || p1ChildObjects[index].GetComponent<Renderer>().material.name == selectedMaterialName + " (Instance)")
         {
             p1SelectedMaterial = p1ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material; ;
         }
