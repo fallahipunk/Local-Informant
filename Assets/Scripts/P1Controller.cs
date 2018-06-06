@@ -1,6 +1,4 @@
-﻿
-
-//Player 1 controller script, to be places on the Interactive objects 
+﻿//Player 1 controller script, to be places on the Interactive objects 
 
 using System.Collections;
 using System.Collections.Generic;
@@ -55,7 +53,7 @@ public class P1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             p1LastObjectIndex = p1ChildCounter;
-      
+
 
             moveUp();
 
@@ -63,7 +61,7 @@ public class P1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             p1LastObjectIndex = p1ChildCounter;
-           
+
 
             moveDown();
         }
@@ -71,7 +69,7 @@ public class P1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             p1LastObjectIndex = p1ChildCounter;
-         
+
 
             moveUp();
         }
@@ -80,7 +78,7 @@ public class P1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             p1LastObjectIndex = p1ChildCounter;
-          
+
             moveDown();
         }
 
@@ -97,9 +95,10 @@ public class P1Controller : MonoBehaviour
 
 
 
-    void moveUp(){
+    void moveUp()
+    {
 
-     
+
 
         p1ChildCounter++;
 
@@ -133,11 +132,12 @@ public class P1Controller : MonoBehaviour
         }
 
 
-       
+
     }
 
-    void moveDown(){
-       
+    void moveDown()
+    {
+
         p1ChildCounter--;
 
         //cap counter at array size and loop it
@@ -179,22 +179,24 @@ public class P1Controller : MonoBehaviour
         string originalMaterialName = instanceName.Remove(instanceName.Length - 11);
 
 
-         // if last object was not selected retern it to its original material
-          if (!p1ChildObjects[p1LastObjectIndex].GetComponent<Stats>().isSelected)
-            {
-               p1ChildObjects[p1LastObjectIndex].GetComponent<Renderer>().material = p1ChildObjects[p1LastObjectIndex].GetComponent<Stats>().originalMaterial;
-           }
+        // if last object was not selected retern it to its original material
+        if (!p1ChildObjects[p1LastObjectIndex].GetComponent<Stats>().isSelected)
+        {
+            p1ChildObjects[p1LastObjectIndex].GetComponent<Renderer>().material = p1ChildObjects[p1LastObjectIndex].GetComponent<Stats>().originalMaterial;
+        }
 
         //compose a the full active material name
         string activeMaterialName = originalMaterialName + playerNumberString + activeMaterialString;
 
 
-        if (Resources.Load(activeMaterialName, typeof(Material)) as Material != null){
+        if (Resources.Load(activeMaterialName, typeof(Material)) as Material != null)
+        {
             p1ActiveMaterial = Resources.Load(activeMaterialName, typeof(Material)) as Material;
         }
 
-        if (p1ActiveMaterial == null){
-            p1ActiveMaterial = p1ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material;;
+        if (p1ActiveMaterial == null)
+        {
+            p1ActiveMaterial = p1ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material; ;
         }
         p1ChildObjects[index].GetComponent<Renderer>().material = p1ActiveMaterial;
 
@@ -206,7 +208,7 @@ public class P1Controller : MonoBehaviour
 
     void selectObject(int index)
     {
-        
+
         // set the isSelected flag in the Stats component to true
         if (p1ChildObjects[p1ChildCounter].GetComponent<Stats>() != null)
         {
@@ -239,9 +241,3 @@ public class P1Controller : MonoBehaviour
 
     }
 }
-        
-   
-
-
-
-

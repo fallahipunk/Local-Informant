@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectionManager : MonoBehaviour {
+public class SelectionManager : MonoBehaviour
+{
+    public Transform BgPrefab;
+    public int lvl;
 
     public bool allSelected;
 
-    public int lvl;
+   
 
+    // children vars (children of Interactive Objects)
     int childArrayValue2 = 0;
     int childArraySize2;
     public int childCounter2 = 1;
@@ -19,7 +23,7 @@ public class SelectionManager : MonoBehaviour {
     void Start()
     {
         Cursor.visible = false;
-     
+
 
         // create array containing all children, to be used on the Interactive Objects game object
         childs2 = gameObject.GetComponentsInChildren<Transform>();
@@ -33,44 +37,57 @@ public class SelectionManager : MonoBehaviour {
         }
     }
 
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update()
+    {
+
         if (Input.anyKeyDown)
         {
             allSelected = AreAllSelected();
-           // Debug.Log(allSelected);
-
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Space)){
-            
-            if(allSelected == true){
-             
-                SceneManager.LoadScene(lvl);
-
-            }
-        }
-
-	}
-
-    private bool AreAllSelected()
-    {
-        for (int i = 0; i < childObjects2.Length; ++i)
-        {
-            if (childObjects2[i].GetComponent<Stats>())
+            // Debug.Log(allSelected);
+            if (allSelected)
             {
-                if (childObjects2[i].GetComponent<Stats>().isSelected == false)
+                ShowBG();
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+                if (allSelected)
                 {
-                    return false;
+
+                    SceneManager.LoadScene(lvl);
+
                 }
             }
-     
-        }
 
-        return true;
+        }
     }
 
-}
+        private bool AreAllSelected()
+        {
+            for (int i = 0; i < childObjects2.Length; ++i)
+            {
+                if (childObjects2[i].GetComponent<Stats>())
+                {
+                    if (childObjects2[i].GetComponent<Stats>().isSelected == false)
+                    {
+                        return false;
+                    }
+                }
+
+            }
+
+            return true;
+        }
+
+        void ShowBG()
+        {
+
+        Instantiate(BgPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+
+    }
+

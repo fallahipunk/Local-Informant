@@ -1,6 +1,4 @@
-﻿
-
-//Player 1 controller script, to be places on the Interactive objects 
+﻿//Player 2 controller script, to be places on the Interactive objects 
 
 using System.Collections;
 using System.Collections.Generic;
@@ -39,6 +37,9 @@ public class P2Controller : MonoBehaviour
         p2Childs = gameObject.GetComponentsInChildren<Transform>();
         childArraySize = p2Childs.Length;
         p2ChildObjects = new GameObject[childArraySize];
+
+        //start child counter at end of array
+        p2ChildCounter = childArraySize - 1;
 
         foreach (Transform trans in p2Childs)
         {
@@ -182,9 +183,12 @@ public class P2Controller : MonoBehaviour
 
 
         // if last object was not selected retern it to its original material
-        if (!p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().isSelected)
+        if (p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>())
         {
-            p2ChildObjects[p2LastObjectIndex].GetComponent<Renderer>().material = p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().originalMaterial;
+            if (!p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().isSelected)
+            {
+                p2ChildObjects[p2LastObjectIndex].GetComponent<Renderer>().material = p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().originalMaterial;
+            }
         }
 
         //compose a the full active material name
@@ -243,9 +247,3 @@ public class P2Controller : MonoBehaviour
 
     }
 }
-
-
-
-
-
-
