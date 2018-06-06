@@ -373,8 +373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b973a4cfe5d284e409d9292962943952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BgPrefab: {fileID: 4686363821638866, guid: c1400788d2c0049d5a07112b19fa8995, type: 2}
+  lvl: 4
   allSelected: 0
-  lvl: 9
   childCounter2: 1
   childs2: []
   childObjects2: []

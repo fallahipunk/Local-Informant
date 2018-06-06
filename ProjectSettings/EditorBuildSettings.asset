@@ -6,48 +6,69 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Assembly/1 - Landscape 22.unity
+    path: Assets/Scenes/Assembly/0- Landscape 21.unity
+    guid: 9965cb5376a344870ad7fb06479c45e4
+  - enabled: 1
+    path: Assets/Scenes/Assembly/1- Landscape 22.unity
     guid: 7f2135ece5531490bbed57cadbd1f4fb
   - enabled: 1
-    path: Assets/Scenes/Assembly/2 - Record 1 Arabic.unity
-    guid: b15d31aaa7b6cc64988d9c2f5086f83f
+    path: Assets/Scenes/Assembly/2- Landscape 1.unity
+    guid: 627339bda256b4ed1a81d1eb4819d1e9
   - enabled: 1
-    path: Assets/Scenes/Assembly/3 - Record 1 English.unity
-    guid: 0c8eca7a144067042a32571d250ecd8d
-  - enabled: 1
-    path: Assets/Scenes/Assembly/4- Before You.unity
-    guid: 536ced3cb178d43a09bd2c8daa2bc0b5
-  - enabled: 1
-    path: Assets/Scenes/Assembly/5 - Landscape 2.unity
-    guid: dc3d2919fb81b44e58c0c33d22b588e9
-  - enabled: 1
-    path: Assets/Scenes/Assembly/6 - Local Informant 1.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Assembly/7 - Local Informat 2.unity
-    guid: b277ce309b38b440b949927c2954e7f4
-  - enabled: 1
-    path: Assets/Scenes/Assembly/8- When.unity
-    guid: 8138d2570e71c4140acca4d943c2c6cd
-  - enabled: 1
-    path: Assets/Scenes/Assembly/9 - Landscape 6.unity
+    path: Assets/Scenes/Assembly/3- Landscape 6.unity
     guid: ac3890f60c6344dddbc86e2f5e60f623
   - enabled: 1
-    path: Assets/Scenes/Assembly/10 - Notes on Second Intifada.unity
+    path: Assets/Scenes/Assembly/4- Record 1 English.unity
+    guid: 0c8eca7a144067042a32571d250ecd8d
+  - enabled: 1
+    path: Assets/Scenes/Assembly/5- Record 1 Arabic.unity
+    guid: b15d31aaa7b6cc64988d9c2f5086f83f
+  - enabled: 1
+    path: Assets/Scenes/Assembly/6- Before You.unity
+    guid: 536ced3cb178d43a09bd2c8daa2bc0b5
+  - enabled: 1
+    path: Assets/Scenes/Assembly/7- Landscape 2.unity
+    guid: dc3d2919fb81b44e58c0c33d22b588e9
+  - enabled: 1
+    path: Assets/Scenes/Assembly/8- Local Informat 2.unity
+    guid: b277ce309b38b440b949927c2954e7f4
+  - enabled: 1
+    path: Assets/Scenes/Assembly/9- Local Informant 1.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Assembly/10- When.unity
+    guid: 8138d2570e71c4140acca4d943c2c6cd
+  - enabled: 1
+    path: Assets/Scenes/Assembly/11- Landscape 6.unity
+    guid: 8bafa8561fe6341ffa4d06cbc458f69e
+  - enabled: 1
+    path: Assets/Scenes/Assembly/12- Landscape 20.unity
+    guid: f1415dd75a3924d4c98f028879667602
+  - enabled: 1
+    path: Assets/Scenes/Assembly/13- Notes on Second Intifada.unity
     guid: 74a80b112cdcf4bd099abed4933d2689
   - enabled: 1
-    path: Assets/Scenes/Assembly/11 - Queen of.unity
+    path: Assets/Scenes/Assembly/14- Queen of.unity
     guid: a0c23c9265a8f4c3f8f3e9c913ff0351
   - enabled: 1
-    path: Assets/Scenes/Assembly/12 - A Teenage.unity
+    path: Assets/Scenes/Assembly/15- A Teenage.unity
     guid: 17905e69063ba48a1be9e27ed3089362
   - enabled: 1
-    path: Assets/Scenes/Assembly/13 - Fuck.unity
+    path: Assets/Scenes/Assembly/16-Fuck.unity
     guid: 3157e9667c05147c8902375ccb07e349
   - enabled: 1
-    path: Assets/Scenes/Assembly/14 - Landscape 23.unity
+    path: Assets/Scenes/Assembly/17- Landscape 23.unity
     guid: 797b2fd7f037b4fb7bd4d6855f145aae
   - enabled: 1
-    path: Assets/Scenes/Assembly/15 - Landscape 1.unity
-    guid: 627339bda256b4ed1a81d1eb4819d1e9
+    path: Assets/Scenes/Assembly/18- Landscape 7.unity
+    guid: cffb1edae420f4626927ec0828821b0e
+  - enabled: 1
+    path: Assets/Scenes/Assembly/19- Landscape 17.unity
+    guid: cd1d667a0a9284e87922b1717c8ccd4b
+  - enabled: 1
+    path: Assets/Scenes/Assembly/20- Landscape 15.unity
+    guid: ba8abd9360a6b4500a7bf68512b867c6
+  - enabled: 1
+    path: Assets/Scenes/Assembly/21- Landscape 11.unity
+    guid: 651fe23271beb492abaad2258f684c18
   m_configObjects: {}
