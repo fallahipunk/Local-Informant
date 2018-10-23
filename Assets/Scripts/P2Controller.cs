@@ -1,4 +1,4 @@
-﻿//Player 2 controller script, to be places on the Interactive objects 
+﻿//Player 2 controller script, to be placed on the Interactive objects Game Object
 
 using System.Collections;
 using System.Collections.Generic;
@@ -69,31 +69,21 @@ public class P2Controller : MonoBehaviour
             moveDown();
         }
 
+        // -------- Selection Input ------- //
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            p2LastObjectIndex = p2ChildCounter;
-
-
-            moveUp();
+            selectObject(p2ChildCounter);
         }
 
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            p2LastObjectIndex = p2ChildCounter;
-
-            moveDown();
+            selectObject2(p2ChildCounter);
         }
 
 
-        // -------- Selection Input ------- //
-
-        if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M))
-        {
-            selectObject(p2ChildCounter);
-        }
-
-        //   Debug.Log("p2 Counter = " + childCounter);
+  
     }
 
 
@@ -177,36 +167,13 @@ public class P2Controller : MonoBehaviour
 
     void activateObject(int index)
     {
-        //get the base material name
-        string instanceName = p2ChildObjects[index].GetComponent<Stats>().originalMaterial.name;
-        string originalMaterialName = instanceName.Remove(instanceName.Length - 11);
+
+        p2ChildObjects[p2LastObjectIndex].GetComponent<Outline>().enabled = false;
 
 
-        // if last object was not selected retern it to its original material
-        if (p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>())
-        {
-            if (!p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().isSelected)
-            {
-                p2ChildObjects[p2LastObjectIndex].GetComponent<Renderer>().material = p2ChildObjects[p2LastObjectIndex].GetComponent<Stats>().originalMaterial;
-            }
-        }
-
-        //compose a the full active material name
-        string activeMaterialName = originalMaterialName + playerNumberString + activeMaterialString;
+        p2ChildObjects[index].GetComponent<Outline>().enabled = true;
 
 
-        if (Resources.Load(activeMaterialName, typeof(Material)) as Material != null)
-        {
-            p2ActiveMaterial = Resources.Load(activeMaterialName, typeof(Material)) as Material;
-        }
-
-        if (p2ActiveMaterial == null)
-        {
-            p2ActiveMaterial = p2ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material; ;
-        }
-        p2ChildObjects[index].GetComponent<Renderer>().material = p2ActiveMaterial;
-
-        Debug.Log(activeMaterialName);
 
     }
 
@@ -228,6 +195,41 @@ public class P2Controller : MonoBehaviour
 
         //compose a the full selected material name
         string selectedMaterialName = originalMaterialName + playerNumberString + selectedMaterialString;
+
+
+        if (Resources.Load(selectedMaterialName, typeof(Material)) as Material != null)
+        {
+            p2SelectedMaterial = Resources.Load(selectedMaterialName, typeof(Material)) as Material;
+        }
+
+        if (p2SelectedMaterial == null || p2ChildObjects[index].GetComponent<Renderer>().material.name == selectedMaterialName + " (Instance)")
+        {
+            p2SelectedMaterial = p2ChildObjects[index].GetComponent<Renderer>().material = Resources.Load("Red", typeof(Material)) as Material; ;
+        }
+
+        p2ChildObjects[index].GetComponent<Renderer>().material = p2SelectedMaterial;
+
+
+        Debug.Log(selectedMaterialName);
+
+    }
+
+    void selectObject2(int index)
+    {
+
+        // set the isSelected flag in the Stats component to true
+        if (p2ChildObjects[p2ChildCounter].GetComponent<Stats>() != null)
+        {
+            p2ChildObjects[p2ChildCounter].GetComponent<Stats>().isSelected = true;
+        }
+
+        //get the base material name
+        string instanceName = p2ChildObjects[index].GetComponent<Stats>().originalMaterial.name;
+        string originalMaterialName = instanceName.Remove(instanceName.Length - 11);
+
+
+        //compose a the full selected material name
+        string selectedMaterialName = originalMaterialName + playerNumberString + activeMaterialString;
 
 
         if (Resources.Load(selectedMaterialName, typeof(Material)) as Material != null)
