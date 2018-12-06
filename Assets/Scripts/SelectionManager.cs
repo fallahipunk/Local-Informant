@@ -44,9 +44,8 @@ public class SelectionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
-        if (Input.anyKeyDown)
-        {
             allSelected = AreAllSelected();
             // Debug.Log(allSelected);
             if (allSelected)
@@ -54,8 +53,7 @@ public class SelectionManager : MonoBehaviour
                 ShowBG();
             }
 
-
-            if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S))
             {
 
                 if (allSelected)
@@ -66,7 +64,7 @@ public class SelectionManager : MonoBehaviour
                 }
             }
 
-        }
+
     }
 
         private bool AreAllSelected()

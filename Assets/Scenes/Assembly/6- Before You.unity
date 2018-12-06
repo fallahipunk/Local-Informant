@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 81722627}
   - component: {fileID: 81722626}
   - component: {fileID: 81722630}
+  - component: {fileID: 81722631}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -213,6 +214,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &81722631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 81722625}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &341060452
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +243,7 @@ GameObject:
   - component: {fileID: 341060454}
   - component: {fileID: 341060453}
   - component: {fileID: 341060457}
+  - component: {fileID: 341060458}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -313,6 +332,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &341060458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341060452}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &389823878
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +691,7 @@ GameObject:
   - component: {fileID: 1830091005}
   - component: {fileID: 1830091004}
   - component: {fileID: 1830091008}
+  - component: {fileID: 1830091009}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -743,6 +780,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &1830091009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1830091003}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2001700633
 Prefab:
   m_ObjectHideFlags: 0
@@ -797,6 +851,7 @@ GameObject:
   - component: {fileID: 2003816189}
   - component: {fileID: 2003816188}
   - component: {fileID: 2003816192}
+  - component: {fileID: 2003816193}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -886,6 +941,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &2003816193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003816187}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2025858512
 GameObject:
   m_ObjectHideFlags: 0

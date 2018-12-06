@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 516300540}
   - component: {fileID: 516300539}
   - component: {fileID: 516300543}
+  - component: {fileID: 516300544}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -243,6 +244,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &516300544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 516300538}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &575395247
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +479,7 @@ GameObject:
   - component: {fileID: 830131816}
   - component: {fileID: 830131815}
   - component: {fileID: 830131819}
+  - component: {fileID: 830131820}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -549,6 +568,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &830131820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 830131814}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1445602146
 Prefab:
   m_ObjectHideFlags: 0
@@ -603,6 +639,7 @@ GameObject:
   - component: {fileID: 1910295369}
   - component: {fileID: 1910295368}
   - component: {fileID: 1910295372}
+  - component: {fileID: 1910295373}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -691,6 +728,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &1910295373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1910295367}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2069526583
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +757,7 @@ GameObject:
   - component: {fileID: 2069526585}
   - component: {fileID: 2069526584}
   - component: {fileID: 2069526588}
+  - component: {fileID: 2069526589}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -791,6 +846,23 @@ MonoBehaviour:
   isSelected: 0
   scaleRate: 0.01
   originalMaterial: {fileID: 0}
+--- !u!114 &2069526589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069526583}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2081072114
 GameObject:
   m_ObjectHideFlags: 0
